@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusto & Pane</title>
+    <link rel="icone" href="image/logo.jpg">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#"><h2>Gusto & pane</h2></a>
+            <ul>
+                <li class="nav_bar">Home</li>
+                <li class="nav_bar">Menu</li>
+                <li class="nav_bar">Galery </li>
+                <li class="nav_bar"> contact </li>
+                 <button type="button"> reserver</button>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="flex_container" id="container">
+            <div class="form-container sign_up">
+                <form action="">
+                    <h3>Administrateur</h3>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="votre Email"requireduuuuuuuuuuu >
+                    <label for="SEmail">Email: </label>
+                    <input type="email" name="SEmail" id="SEmail" placeholder="votre Email" required>
+                    <label for="acode"> Mots de pass:</label>
+                    <input type="password" name="acode" id="acode" placeholder="Mots de passe" required>
+                    <button type="submit"> SIgn up</button>
+                </form>
+            </div>
+            <div class="form-container sign_in">
+                <form action="">
+                    <h3>Sign in </h3>
+                    <label for="Email">Email: </label>
+                    <input type="email"name="Email" id="Email" placeholder="votre Email" required>
+                    <label for="ucode"> Mots de pass:</label>
+                    <input type="password" name="acode" id="acode" placeholder="Mots de passe" required>
+                    <button type="submit"> Sign in </button>
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>Rebonjour !</h1>
+                        <p>Entrer votre compt pour se connecter a Gusto & pane!</p>
+                        <button class="hidden" id="login">Sign in </button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <button class="hidden" id="registre">Sign up </button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
