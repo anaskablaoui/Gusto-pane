@@ -187,7 +187,7 @@ main
 
 .toggle 
 {
-    background: url(./image/pizza.jpg);
+    background: url(../image/pizza.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
