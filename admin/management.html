@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./management.css">
+    <script src="./management.js" defer></script>
+</head>
+<body>
+    <header>
+        <header>
+        <h2 class="mister"> Bonjour Monsieur</h2>
+        <nav class="nav-container">
+            <a href="#" class="resto"><h1>Gusto & Pane</h1></a>
+            <ul class="nav-bar">
+                <li><a href="">Home</a></li>
+                <li><a href="">Menu</a></li>
+                <li><a href="">Comptabilite</a></li>
+                <li><a href="">Employes</a></li>
+                <li><a href="">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    </header>
+    <main>
+         <aside class="sidebar">
+            <button data-target="restaurant">Restaurant</button>
+            <button data-target="employees">Employés</button>
+            <button data-target="Menu">Menu</button>
+        </aside>
+        <div class="content">
+            <section class="panel active" id="restaurant">
+                <div class="dashboard">
+
+                </div>
+
+                <div class="speciality">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </section>
+            <section class="panel" id="employees">
+                <div class="gallery">
+
+                </div>
+                <form action="">
+                    <h2>Nouveau employe</h2>
+                    <label for="nom">nom:</label>
+                    <input type="text" name="nom" id="nom">
+                    <label for="prenom">prenom:</label>
+                    <input type="prenom" name="prenom" id="prenom">
+                    <label for="age">age:</label>
+                    <input type="number" min="18" name="age" id="age">
+                    <label for="tel">telephone:</label>
+                    <input type="tel" name="tel" id="tel">
+                    <label for="adress">Adress:</label>
+                    <input type="text" name="adress" id="adress">
+                    <label for="salaire">salaire:</label>
+                    <input type="number" name="salaire" id="salaire">
+                    <label for="photo">Photo:</label>
+                    <input type="file" name="photo" id="photo" accept="image/*">
+                    <input type="submit" value="cree">
+                </form>
+            </section>
+            <section class="panel" id="Menu">
+                <div class="gallery">
+
+                </div>
+                <form action="">
+                    <h2>Ajouter un plats</h2>
+                    <label for="nom">Nom:</label>
+                    <input type="text" name="nom" id="nom">
+                    <label for="ingredient">Ingredient:</label>
+                    <textarea name="ingedient" id="ingredient"></textarea>
+                    <label for="prix">Prix:</label>
+                    <input type="number" name="prix" id="prix">
+                    <label for="photo">Photo:</label>
+                    <input type="file" name="photo" id="photo" accept="image/*">
+                    <input type="submit" value="ajoutez">
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
