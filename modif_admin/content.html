@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusto & Pane</title>
+    <link rel="stylesheet" href="content.css">
+</head>
+<body>
+    <aside>
+        <!-- aside navigation bar-->
+        <h2 class="mister"> Bonjour Monsieur</h2>
+        <nav class="nav-container">
+            <ul class="nav-bar">
+                <li><a href="">Home</a></li>
+                <li><a href="">stocks</a></li>
+                <li><a href="">restaurants</a></li>
+                <li><a href="">Menu</a></li>
+                <li><a href="">economie</a></li>
+                <li><a href="">employee</a></li>
+                <li><a href="">Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <!-- partie home-->
+        <article id="home" class="panel active">
+            <div class="home-content">
+                <div class="stats">
+                    
+                </div>
+                <div class="info">
+                    <div class="calender">
+
+                    </div>
+                    <div class="notif">
+                        
+                    </div>
+                </div>
+            </div>
+        </article >
+        <!-- partie stocks-->
+        <article id="stocks" class="panel">
+                <div class="stocks-content">
+                    <div class="Charts">
+
+                    </div>
+                    <div class="crud-stock">
+                        <div class="envoyer au restaurant">
+
+                        </div>
+                        <div class="modifier">
+
+                        </div>
+                    </div>
+                </div>
+        </article>
+        <!-- partie restaurants-->
+        <article id="restaurants" class="panel">
+            <div class="restaurants-content">
+                <div class="gallery">
+                    <!-- gallery des sitews existants dans ma base de donne -->
+                </div>
+                <div class="buttons">
+                    <!-- bouttons pour gerer mes restaurants-->
+                    <button id="ajouter">
+                        ajouter
+                    </button>
+                    <button id="supprimer">
+                        supprimer
+                    </button>
+                </div>
+                <div class="info">
+                    <!-- les information de chaque restaurant -->
+                    <div class="courbe">
+
+                    </div>
+                    <div class="statistique">
+
+                    </div>
+                </div>
+
+            </div>
+        </article>
+        <!-- partie Menu-->
+        <article id="Menu" class="panel">
+            <div class="Menu-content">
+                <div class="menu-gallery">
+
+                </div>
+                <div class="ajouter">
+                    <form action="">
+                        <label for="nom">Nom: </label>
+                        <input type="text" name="nom" id="nom"><br>
+                        <label for="prix">Prix:</label>
+                        <input type="number" name="prix" id="prix">
+                        <div class="checkboxes">
+                            
+                        </div>
+                        <input type="submit" value="ajouter">
+                    </form>
+                </div>
+            </div>
+        </article>
+        <!-- partie economie-->
+        <article id="economie" class="panel">
+            <div class="economie-content">
+                <div class="spends-charts">
+
+                </div>
+                <div class="graph-economie">
+
+                </div>
+            </div>
+        </article>
+        <!-- partie employee-->
+        <article id="employee" class="panel">
+            <div class="employe-gallery">
+
+            </div>
+            <div class="modifier">
+                <form action="">
+                    <label for="name">Nom:</label>
+                    <input type="text" name="name" id="name">
+                    <label for="prenom">Prenom:</label>
+                    <input type="text" name="prenom" id="prenom">
+                    <label for="CIN">CIN:</label>
+                    <input type="text" name="CIN" id="CIN">
+                    <label for="photo">Photo:</label>
+                    <input type="file" accept="image/*">
+                    <label for="gerant">Gerant: <input type="checkbox" name="fonction" id="gerant"></label>
+                    <label for="cuisinier">Cuisinier: <input type="checkbox" name="fonction" id="cuisinier"></label>
+                    <label for="serveur">Serveur: <input type="checkbox" name="fonction" id="serveur"></label>
+                    <label for="livreur">livreur: <input type="checkbox" name="fonction" id="livreur"></label>
+                    <input type="submit" value="Valider">
+                </form>
+            </div>
+        </article>
+        <!-- partie settings-->
+        <article id="settings" class="panel">
+            <div class="settings-content">
+                 <div class="profile">
+                    <!-- profile box-->
+                </div>
+
+                <div class="settings">
+                    <!-- settings du compt-->
+                    <form action="" id="info">
+                        <img src="../image/logo.png" width="15%" alt="">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" >
+                        <label for="prenom"> Prenom:</label>
+                        <input type="text" name="prenom" id="prenom">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="Email">
+                        <label for="tel">telephone: </label>
+                        <input type="tel" name="tel" id="tel">
+                        <input type="submit" value="changer">
+                    </form>
+                    <form action="" id="change-password">
+                        <label for="password"> Mots de pass:</label>
+                        <input type="text" name="password" id="password">
+                        <label for="confirm_password">Confirmer Mots de pass:</label>
+                        <input type="text" name="confirm_password" id="confirm_password">
+                    </form>
+                </div>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
