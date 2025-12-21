@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusto & Pane</title>
+    <link rel="stylesheet" href="content.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <aside>
+        <!-- aside navigation bar-->
+        <h2 class="mister"> Bonjour Monsieur</h2>
+        <nav class="nav-container">
+            <ul class="nav-bar">
+                <li><a class="selection" data-target="Home" href="#">Home</a></li>
+                <li><a class="selection" data-target="stocks" href="#">stocks</a></li>
+                <li><a class="selection" data-target="restaurants" href="#">restaurants</a></li>
+                <li><a class="selection" data-target="Menu" href="#">Menu</a></li>
+                <li><a class="selection" data-target="economie" href="#">economie</a></li>
+                <li><a class="selection" data-target="employee" href="#">employee</a></li>
+                <li><a class="selection" data-target="settings" href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <!-- partie home-->
+        <article id="Home" class="panel">
+            <div class="home-content">
+                <div class="stats">
+                    
+                </div>
+                <div class="info">
+                    <div class="calender">
+
+                    </div>
+                    <div class="notif">
+                        
+                    </div>
+                </div>
+            </div>
+        </article >
+        <!-- partie stocks-->
+        <article id="stocks" class="panel ">
+                <div class="stocks-content">
+                    <div class="Charts">
+
+                    </div>
+                    <div class="crud-stock">
+                        <div class="envoyer-au-restaurant">
+
+                        </div>
+                        <div class="modifier">
+
+                        </div>
+                    </div>
+                </div>
+        </article>
+        <!-- partie restaurants-->
+        <article id="restaurants" class="panel">
+            <div class="restaurants-content">
+                <div class="ensemble-resto">
+                <div class="buttons">
+                        <!-- bouttons pour gerer mes restaurants-->
+                        <button id="ajouter">
+                            ajouter
+                        </button>
+                        <button id="supprimer">
+                                supprimer
+                        </button>
+                </div>
+                <form action="" class="form ">
+                    <label for="rNom">Nom:</label>
+                    <input type="text" name="rNom" id="rNom">
+                    <label for="rAdress">Adress:</label>
+                    <textarea name="rAdress" id="rAdress"></textarea>
+                    <label for="rTable">Tables:</label>
+                    <input type="range">
+                    <input type="submit" value="enregistrer">
+                    
+                </form>
+                <div class="gallery">
+                    <!-- gallery des sitews existants dans ma base de donne -->
+                    
+                    </div>  
+                </div>  
+                
+                
+            <div class="info">
+                    <!-- les information de chaque restaurant -->
+                <div class="courbe">
+
+                </div>
+                <div class="statistique">
+
+                </div>
+            </div>
+
+            </div>
+        </article>
+        <!-- partie Menu-->
+        <article id="Menu" class="panel">
+            <div class="Menu-content">
+                <div class="menu-gallery">
+
+                </div>
+                <div class="ajouter">
+                    <form action="">
+                        <label for="nom">Nom: </label>
+                        <input type="text" name="nom" id="nom"><br>
+                        <label for="prix">Prix:</label>
+                        <input type="number" name="prix" id="prix">
+                        <div class="checkboxes">
+                            <label for="pizza">Pizza:<input type="radio" name="category" id="pizza"></label><br>
+                            <label for="spaghetti">Spaghetti: <input type="radio" name="category" id="spaghetti"></label><br>
+                            <label for="lazagna"> Lazagna: <input type="radio" name="category" id="lazagna"></label><br>
+                            <label for="sandwich">sandwich: <input type="radio" name="category" id="sandwich"></label><br>
+                            <label for="boisson"> Boisson : <input type="radio" name="category" id="boisson"></label><br>
+                        </div>
+                        <input id="submit" type="submit" value="ajouter">
+                    </form>
+                </div>
+            </div>
+        </article>
+        <!-- partie economie-->
+        <article id="economie" class="panel ">
+            <div class="economie-content">
+                <div class="spends-charts">
+
+                </div>
+                <div class="graph-economie">
+
+                </div>
+            </div>
+        </article>
+        <!-- partie employee-->
+        <article id="employee" class="panel ">
+            <div class="employee-content">
+                <div class="employe-gallery">
+
+                </div>
+                <div class="modifier">
+                    <form action="">
+                        <label for="name">Nom:</label>
+                        <input type="text" name="name" id="name"><br>
+                        <label for="prenom">Prenom:</label>
+                        <input type="text" name="prenom" id="prenom"><br>
+                        <label for="CIN">CIN:</label>
+                        <input type="text" name="CIN" id="CIN"><br>
+                        <label for="salaire">Salaire:</label>
+                        <input type="number" name="salaire" id="salaire" min="3000"><br>
+                        <label for="photo">Photo:</label>
+                        <input type="file" accept="image/*"><br>
+                        <label for="gerant">Gerant: <input type="checkbox" name="fonction" id="gerant"></label>
+                        <label for="cuisinier">Cuisinier: <input type="checkbox" name="fonction" id="cuisinier"></label>
+                        <label for="serveur">Serveur: <input type="checkbox" name="fonction" id="serveur"></label>
+                        <label for="livreur">livreur: <input type="checkbox" name="fonction" id="livreur"></label><br>
+                        <input type="submit" value="Valider">
+                    </form>
+                </div>
+            </div>
+        </article>
+        <!-- partie settings-->
+        <article id="settings" class="panel active">
+            <div class="settings-content">
+                 <div class="profile">
+                    <!-- profile box-->
+                     <img src="../image/chef.jpg"  width="150px" height="150px" alt="">
+                     <h2> Monsieur Madame</h2>
+                     <p> 
+
+                     </p>
+                </div>
+
+                <div class="settings">
+                    <!-- settings du compt-->
+                    <form action="" id="info">
+                        <img src="../image/logo.png" width="15%" alt=""><br>
+                        <label for="name">Name:</label><br>
+                        <input type="text" name="name" id="name" ><br>
+                        <label for="prenom"> Prenom:</label><br>
+                        <input type="text" name="prenom" id="prenom"><br>
+                        <label for="email">Email:</label><br>
+                        <input type="email" name="email" id="Email"><br>
+                        <label for="tel">telephone: </label><br>
+                        <input type="tel" name="tel" id="tel"><br>
+                        <input type="submit" id="submit" value="changer"><br>
+                    </form>
+                    <form action="" id="change-password">
+                        <h2>change-password</h2>
+                        <label for="password"> Mots de pass:</label>
+                        <input type="text" name="password" id="password">
+                        <label for="confirm_password">Confirmer Mots de pass:</label>
+                        <input type="text" name="confirm_password" id="confirm_password"><br>
+                        <input type="submit" id="submit" value="changer"><br>
+                    </form>
+                </div>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
