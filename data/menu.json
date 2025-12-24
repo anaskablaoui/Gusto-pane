@@ -1,0 +1,19 @@
+{
+  "menu": [
+    {
+      "no": 1,
+      "nom": "Pizza",
+      "prix": 45.00
+    },
+    {
+      "no": 2,
+      "nom": "Lasagna",
+      "prix": 60.00
+    },
+    {
+      "no": 3,
+      "nom": "Spaghetti",
+      "prix": 50.00
+    }
+  ]
+}

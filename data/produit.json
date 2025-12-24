@@ -1,0 +1,19 @@
+{
+  "produits": [
+    {
+      "no": 1,
+      "nom": "Fromage",
+      "category": "Ingredient"
+    },
+    {
+      "no": 2,
+      "nom": "Tomate",
+      "category": "Ingredient"
+    },
+    {
+      "no": 3,
+      "nom": "Pate",
+      "category": "Ingredient"
+    }
+  ]
+}

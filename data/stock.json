@@ -1,0 +1,19 @@
+{
+  "stock": [
+    {
+      "no": 1,
+      "prod_no": 1,
+      "qte_stock": 30
+    },
+    {
+      "no": 2,
+      "prod_no": 2,
+      "qte_stock": 50
+    },
+    {
+      "no": 3,
+      "prod_no": 3,
+      "qte_stock": 40
+    }
+  ]
+}
