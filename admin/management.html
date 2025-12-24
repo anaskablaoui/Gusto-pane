@@ -6,26 +6,36 @@
     <title>Document</title>
     <link rel="stylesheet" href="./management.css">
     <script src="./management.js" defer></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
-    <header>
-        <header>
-        <h2 class="mister"> Bonjour Monsieur</h2>
-        <nav class="nav-container">
-            <a href="#" class="resto"><h1>Gusto & Pane</h1></a>
-            <ul class="nav-bar">
-                <li><a href="./home.html">Home</a></li>
-                <li><a href="./management.html">management</a></li>
-                <li><a href="./account.html">Account</a></li>
+
+
+
+
+    <header class="wrapper">
+         <div class="sidenav">
+       <a href="#" class="resto"><h1>Gusto & Pane</h1></a>
+            <ul>
+                <li><a href="./home.html" class="active"><i class="fa-solid fa-house"></i>Home</a></li>
+                <li><a href="./management.html"><i class="fa-solid fa-wrench"></i>Management</a></li>
+                <li><a href="./account.html"><i class="fa-solid fa-user"></i>Account</a></li>
             </ul>
-        </nav>
+            </div>
+        
     </header>
-    </header>
+
+
+
+
     <main>
          <aside class="sidebar">
             <button data-target="restaurant">Restaurant</button>
             <button data-target="employees">Employés</button>
             <button data-target="Menu">Menu</button>
+            <button data-target="****">*******</button>
+            <button data-target="****">*******</button>
         </aside>
         <div class="content">
             <section class="panel active" id="restaurant">
