@@ -1,0 +1,20 @@
+{
+  "admins": [
+    {
+      "matricule": 1,
+      "nom": "Kablaoui",
+      "prenom": "Anas",
+      "email": "admin@gustopane.com",
+      "tel": "0600000000",
+      "mots_de_passe": "admin123"
+    },
+    {
+      "matricule": 2,
+      "nom": "Chef",
+      "prenom": "Manager",
+      "email": "manager@gustopane.com",
+      "tel": "0611111111",
+      "mots_de_passe": "manager123"
+    }
+  ]
+}

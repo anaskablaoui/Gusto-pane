@@ -1,0 +1,14 @@
+{
+  "depenses": [
+    {
+      "no": 900001,
+      "descri": "Achat Fromage",
+      "prix": 1200.00
+    },
+    {
+      "no": 900002,
+      "descri": "Electricité",
+      "prix": 450.00
+    }
+  ]
+}
