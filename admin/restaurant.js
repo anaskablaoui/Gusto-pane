@@ -1,13 +1,17 @@
-const restaurant_area=document.querySelector('.restaurant-gallery');
+const restaurant_area = document.querySelector('.restaurant-gallery');
 
-let restaurants=[];
-fetch('../data/restaurant.json')
-    .then(response => response.json())
-    .then (data => {
-        restaurants=data.restaurants;
-        afficherRestaurant(restaurants);
-    })
-    .catch(error => console.log('erreur Json' +error))
+let restaurants = [];
+if (!restaurant_area) {
+    console.log('Element .restaurant-gallery introuvable dans le DOM');
+} else {
+    fetch('../data/restaurant.json')
+        .then(response => response.json())
+        .then(data => {
+            restaurants = data.restaurants || [];
+            afficherRestaurant(restaurants);
+        })
+        .catch(error => console.log('erreur Json: ' + error));
+}
 
 
 function afficherRestaurant(liste)
@@ -27,20 +31,23 @@ function afficherRestaurant(liste)
         });
 }
 
-const menuForm =document.getElementById('menu-form');
-
-menuForm.addEventListener('submit',function (e)
-{
-    e.preventDefault();
-    const nom=document.getElementById('rNom').value;
-    const adress=document.getElementById('rAdresse').value;
-    const table=document.getElementById('rTable').value;
-    const nv_restau={
-        id:Math.random(),
-        nom : nom,
-        adresse: adress,
-        tables: table
-    };
-    restaurants.push(nv_restau);
-    afficherRestaurant(restaurants);
-});
+const restaurantForm = document.getElementById('restaurant-form');
+if (restaurantForm) {
+    restaurantForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const nom = document.getElementById('rNom') ? document.getElementById('rNom').value : '';
+        const adresse = document.getElementById('rAdresse') ? document.getElementById('rAdresse').value : '';
+        const table = document.getElementById('rTable') ? document.getElementById('rTable').value : 0;
+        const nv_restau = {
+            id: Math.random(),
+            nom: nom,
+            adresse: adresse,
+            tables: table
+        };
+        restaurants.push(nv_restau);
+        afficherRestaurant(restaurants);
+        restaurantForm.reset();
+    });
+} else {
+    console.log('Formulaire #restaurant-form introuvable — impossible d\'ajouter un restaurant depuis le formulaire.');
+}

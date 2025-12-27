@@ -9,6 +9,7 @@
     <script src="employe.js" defer></script>
     <script src="menu.js" defer> </script>
     <script src="restaurant.js" defer></script>
+    <script src="stock.js" defer></script>
 </head>
 <body>
     <aside>
@@ -51,16 +52,42 @@
                     </div>
                     <div class="crud-stock">
                         <div class="envoyer-au-restaurant">
-
+                            <!-- Liste des stocks -->
+                            <table id="stock-table">
+                                <thead>
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Prod No</th>
+                                        <th>Qte en stock</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="modifier">
+                            <!-- Formulaire pour ajouter / modifier un stock -->
+                            <form id="stock-form">
+                                <input type="hidden" id="sIndex" value="">
+                                <label for="sNo">No:</label>
+                                <input type="number" id="sNo" name="sNo" required>
 
+                                <label for="sProdNo">produit nom:</label>
+                                <input type="text" id="pr_nom" name="pr_nom" required>
+
+                                <label for="sQte">Quantité en stock:</label>
+                                <input type="number" id="sQte" name="sQte" required>
+
+                                <button type="submit" id="sSubmit">Ajouter</button>
+                                <button type="reset" id="sReset">Réinitialiser</button>
+                            </form>
                         </div>
                     </div>
                 </div>
         </article>
         <!-- partie restaurants-->
-        <article id="restaurants" class="panel active">
+        <article id="restaurants" class="panel">
             <div class="restaurants-content">
                 <div class="ensemble-resto">
                 <div class="buttons">
@@ -72,15 +99,14 @@
                                 supprimer
                         </button>
                 </div>
-                <form action="" class="form active">
+                <form action="" class="form active" id="restaurant-form">
                     <label for="rNom">Nom:</label>
                     <input type="text" name="rNom" id="rNom">
-                    <label for="rAdress">Adress:</label>
-                    <textarea name="rAdress" id="rAdress"></textarea>
+                    <label for="rAdresse">Adresse:</label>
+                    <textarea name="rAdresse" id="rAdresse"></textarea>
                     <label for="rTable">Tables:</label>
-                    <input type="range">
+                    <input type="range" id="rTable" min="0" max="100">
                     <input type="submit" value="enregistrer">
-                    
                 </form>
                 <div class="restaurant-gallery ">
                     <!-- gallery des sitews existants dans ma base de donne -->
@@ -102,7 +128,7 @@
             </div>
         </article>
         <!-- partie Menu-->
-        <article id="Menu" class="panel active">
+        <article id="Menu" class="panel active ">
             <div class="Menu-content">
                 <div class="menu-gallery">
 

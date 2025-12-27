@@ -161,6 +161,68 @@ main {
     box-shadow: 0 5px 15px rgba(0,0,0,0.35);
 }
 
+/* Stock table and form styles */
+#stock-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 8px;
+}
+#stock-table thead th {
+    background: linear-gradient(90deg,#2E8B57,#D9534F);
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+#stock-table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+#stock-table tbody tr:hover {
+    background-color: rgba(46,139,87,0.06);
+}
+
+#stock-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+}
+#stock-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+#stock-form input[type="number"],
+#stock-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+#stock-form button {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #2E8B57;
+    color: #fff;
+}
+#stock-form button#sReset {
+    background-color: #D9534F;
+}
+#stock-form .action-row {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-stock {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: #F0AD4E;
+    color: #fff;
+    cursor: pointer;
+}
+
 /* =========================
    RESTAURANTS
 ========================= */
