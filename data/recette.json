@@ -1,0 +1,14 @@
+{
+  "recettes": [
+    {
+      "no": 800001,
+      "descri": "Vente Pizza",
+      "prix": 900.00
+    },
+    {
+      "no": 800002,
+      "descri": "Vente Lasagna",
+      "prix": 720.00
+    }
+  ]
+}
