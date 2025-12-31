@@ -1,14 +1,16 @@
 {
   "recettes": [
-    {
-      "no": 800001,
-      "descri": "Vente Pizza",
-      "prix": 900.00
-    },
-    {
-      "no": 800002,
-      "descri": "Vente Lasagna",
-      "prix": 720.00
-    }
+    { "no": 800001, "descri": "Vente Pizza Margherita", "prix": 900.00 },
+    { "no": 800002, "descri": "Vente Lasagna", "prix": 720.00 },
+    { "no": 800003, "descri": "Vente Spaghetti Bolognese", "prix": 650.50 },
+    { "no": 800004, "descri": "Vente Salade César", "prix": 480.25 },
+    { "no": 800005, "descri": "Vente Burger Classique", "prix": 820.00 },
+    { "no": 800006, "descri": "Vente Pizza Pepperoni", "prix": 950.00 },
+    { "no": 800007, "descri": "Vente Risotto Champignons", "prix": 700.00 },
+    { "no": 800008, "descri": "Vente Tacos Poulet", "prix": 560.75 },
+    { "no": 800009, "descri": "Vente Sandwich Thon", "prix": 420.00 },
+    { "no": 800010, "descri": "Vente Quiche Lorraine", "prix": 510.00 },
+    { "no": 800011, "descri": "Vente Dessert Tiramisu", "prix": 350.00 },
+    { "no": 800012, "descri": "Vente Boisson Soda 33cl", "prix": 120.00 }
   ]
 }
