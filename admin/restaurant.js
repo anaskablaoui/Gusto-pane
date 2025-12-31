@@ -1,78 +1,89 @@
-const restaurant_area = document.querySelector('.restaurant-gallery');
+const tableBody = document.querySelector('.restaurant-gallery tbody');
+const form = document.getElementById('restaurant-form');
+
+const rNom = document.getElementById('rNom');
+const rAdresse = document.getElementById('rAdresse');
+const rTable = document.getElementById('rTable');
+const tableValue = document.getElementById('table-value');
 
 let restaurants = [];
-let nextRestaurantId = 1;
-if (!restaurant_area) {
-    console.log('Element .restaurant-gallery introuvable dans le DOM');
-} else {
-    fetch('../data/restaurant.json')
-        .then(response => response.json())
-        .then(data => {
-            restaurants = data.restaurants || [];
-            // compute next id
-            const maxId = restaurants.length ? Math.max(...restaurants.map(r => Number(r.id) || 0)) : 0;
-            nextRestaurantId = maxId ? maxId + 1 : nextRestaurantId;
-            afficherRestaurant(restaurants);
-        })
-        .catch(error => console.log('erreur Json: ' + error));
+let restoSelected = null;
+let nextId = 1;
+
+/* slider */
+rTable.addEventListener('input', () => {
+  tableValue.textContent = rTable.value;
+});
+
+/* fetch JSON */
+fetch('../data/restaurants.json')
+  .then(res => res.json())
+  .then(data => {
+    restaurants = data.restaurants || [];
+    nextId = restaurants.length
+      ? Math.max(...restaurants.map(r => r.id)) + 1
+      : 1;
+
+    afficher();
+  })
+  .catch(err => console.error(err));
+
+function afficher() {
+  tableBody.innerHTML = '';
+
+  restaurants.forEach(r => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${r.nom}</td>
+      <td>${r.adresse}</td>
+      <td>${r.tables}</td>
+      <td>
+        <button class="edit" data-id="${r.id}">✏️</button>
+        <button class="del" data-id="${r.id}">🗑</button>
+      </td>
+    `;
+    tableBody.appendChild(tr);
+  });
 }
 
+/* modifier / supprimer */
+tableBody.addEventListener('click', e => {
+  const id = Number(e.target.dataset.id);
+  if (!id) return;
 
-function afficherRestaurant(liste)
-{
-    restaurant_area.innerHTML="";
+  if (e.target.classList.contains('edit')) {
+    restoSelected = restaurants.find(r => r.id === id);
+    rNom.value = restoSelected.nom;
+    rAdresse.value = restoSelected.adresse;
+    rTable.value = restoSelected.tables;
+    tableValue.textContent = restoSelected.tables;
+  }
 
-    liste.forEach(restaurant => {
-            const gallery = document.createElement('div');
-            gallery.classList.add('gallery');
-            if (!restaurant.id) {
-                restaurant.id = nextRestaurantId++;
-            }
-            gallery.dataset.id = restaurant.id;
-            gallery.id = `rest-${restaurant.id}`;
+  if (e.target.classList.contains('del')) {
+    restaurants = restaurants.filter(r => r.id !== id);
+    afficher();
+  }
+});
 
-            const info = document.createElement('p');
-            info.classList.add('info');
-            info.textContent = `Id: ${restaurant.id}; nom: ${restaurant.nom};  adresse: ${restaurant.adresse}`;
-            gallery.appendChild(info);
-            restaurant_area.appendChild(gallery);
-        });
-}
+/* submit */
+form.addEventListener('submit', e => {
+  e.preventDefault();
 
-const restaurantForm = document.getElementById('restaurant-form');
-if (restaurantForm) {
-    restaurantForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const nom = document.getElementById('rNom') ? document.getElementById('rNom').value : '';
-        const adresse = document.getElementById('rAdresse') ? document.getElementById('rAdresse').value : '';
-        const table = document.getElementById('rTable') ? document.getElementById('rTable').value : 0;
-        const nv_restau = {
-            id: nextRestaurantId++,
-            nom: nom,
-            adresse: adresse,
-            tables: table
-        };
-        restaurants.push(nv_restau);
-        afficherRestaurant(restaurants);
-        restaurantForm.reset();
+  if (restoSelected) {
+    restoSelected.nom = rNom.value;
+    restoSelected.adresse = rAdresse.value;
+    restoSelected.tables = rTable.value;
+    restoSelected = null;
+  } else {
+    restaurants.push({
+      id: nextId++,
+      nom: rNom.value,
+      adresse: rAdresse.value,
+      tables: rTable.value
     });
-} else {
-    console.log('Formulaire #restaurant-form introuvable — impossible d\'ajouter un restaurant depuis le formulaire.');
-}
+  }
 
-// delegated click handler: populate form when clicking a gallery item
-if (restaurant_area) {
-    restaurant_area.addEventListener('click', function(e) {
-        const gallery = e.target.closest('.gallery');
-        if (!gallery) return;
-        const id = Number(gallery.dataset.id);
-        const rest = restaurants.find(r => Number(r.id) === id);
-        if (!rest) return;
-        const rNom = document.getElementById('rNom');
-        const rAdresse = document.getElementById('rAdresse');
-        const rTable = document.getElementById('rTable');
-        if (rNom) rNom.value = rest.nom || '';
-        if (rAdresse) rAdresse.value = rest.adresse || '';
-        if (rTable) rTable.value = rest.tables || 0;
-    });
-}
+  form.reset();
+  tableValue.textContent = 0;
+  afficher();
+});
