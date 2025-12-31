@@ -8,8 +8,8 @@
       "cin": "BE123456",
       "email": "yassine@gustopane.com",
       "tel": "0612345678",
-      "salaire": 3500,
-      "photo": "yassine.jpg"
+      "salaire": 3500
+      
     },
     {
       "matricule": 10002,
@@ -19,30 +19,10 @@
       "cin": "BE654321",
       "email": "sara@gustopane.com",
       "tel": "0623456789",
-      "salaire": 2800,
-      "photo": "sara.jpg"
-    },
-    {
-      "matricule": 10002,
-      "nom": "Ben Ali",
-      "prenom": "Sara",
-      "fonction": "Serveuse",
-      "cin": "BE654321",
-      "email": "sara@gustopane.com",
-      "tel": "0623456789",
-      "salaire": 2800,
-      "photo": "sara.jpg"
-    },
-    {
-      "matricule": 10001,
-      "nom": "El Amrani",
-      "prenom": "Yassine",
-      "fonction": "Cuisinier",
-      "cin": "BE123456",
-      "email": "yassine@gustopane.com",
-      "tel": "0612345678",
-      "salaire": 3500,
-      "photo": "yassine.jpg"
+      "salaire": 2800
+      
     }
+
   ]
+  
 }

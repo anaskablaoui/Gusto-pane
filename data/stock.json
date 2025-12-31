@@ -1,19 +1,14 @@
 {
   "stock": [
-    {
-      "no": 1,
-      "produit": "Fromage",
-      "qte_stock": 30
-    },
-    {
-      "no": 2,
-      "produit": "Tomate",
-      "qte_stock": 50
-    },
-    {
-      "no": 3,
-      "produit": "Pate",
-      "qte_stock": 40
-    }
+    { "no": 1, "produit": "Fromage", "qte_stock": 30 },
+    { "no": 2, "produit": "Tomate", "qte_stock": 50 },
+    { "no": 3, "produit": "Pate", "qte_stock": 40 },
+    { "no": 4, "produit": "Huile d'olive", "qte_stock": 20 },
+    { "no": 5, "produit": "Oignon", "qte_stock": 75 },
+    { "no": 6, "produit": "Champignon", "qte_stock": 45 },
+    { "no": 7, "produit": "Poivron", "qte_stock": 60 },
+    { "no": 8, "produit": "Basilic frais", "qte_stock": 15 },
+    { "no": 9, "produit": "Viande hachée", "qte_stock": 25 },
+    { "no": 10, "produit": "Farine", "qte_stock": 100 }
   ]
 }
