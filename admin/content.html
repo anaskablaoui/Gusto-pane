@@ -88,69 +88,96 @@
         </article>
         <!-- partie restaurants-->
         <article id="restaurants" class="panel">
-            <div class="restaurants-content">
-                <div class="ensemble-resto">
-                <div class="buttons">
-                        <!-- bouttons pour gerer mes restaurants-->
-                        <button id="ajouter">
-                            ajouter
-                        </button>
-                        <button id="supprimer">
-                                supprimer
-                        </button>
-                </div>
-                <form action="" class="form active" id="restaurant-form">
-                    <label for="rNom">Nom:</label>
-                    <input type="text" name="rNom" id="rNom">
-                    <label for="rAdresse">Adresse:</label>
-                    <textarea name="rAdresse" id="rAdresse"></textarea>
-                    <label for="rTable">Tables:</label>
-                    <input type="range" id="rTable" min="0" max="100">
-                    <input type="submit" value="enregistrer">
-                </form>
-                <div class="restaurant-gallery ">
-                    <!-- gallery des sitews existants dans ma base de donne -->
-                    
-                    </div>  
-                </div>  
-                
-                
-            <div class="info">
-                    <!-- les information de chaque restaurant -->
-                <div class="courbe">
+  <div class="restaurants-content">
 
-                </div>
-                <div class="statistique">
+    <div class="ensemble-resto">
 
-                </div>
-            </div>
+      <div class="buttons">
+        <button id="btn-ajouter">Ajouter</button>
+        <button id="btn-annuler">Annuler</button>
+      </div>
 
-            </div>
-        </article>
+      <form class="form" id="restaurant-form">
+        <label>Nom:</label>
+        <input type="text" id="rNom" required>
+
+        <label>Adresse:</label>
+        <textarea id="rAdresse" required></textarea>
+
+        <label>Tables:</label>
+        <input type="range" id="rTable" min="0" max="100">
+        <span id="table-value">0</span>
+
+        <input type="submit" value="Enregistrer">
+      </form>
+
+      <div class="restaurant-gallery">
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Adresse</th>
+        <th>Tables</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- JS injecte ici -->
+    </tbody>
+  </table>
+</div>
+
+
+    </div>
+
+  </div>
+</article>
+
         <!-- partie Menu-->
-        <article id="Menu" class="panel active ">
-            <div class="Menu-content">
-                <div class="menu-gallery">
+       <article id="Menu" class="panel active">
+  <div class="Menu-content">
 
-                </div>
-                <div class="ajouter">
-                    <form action="" id="menu-form">
-                        <label for="nom">Nom: </label>
-                        <input type="text" name="nom" id="nom"><br>
-                        <label for="prix">Prix:</label>
-                        <input type="number" name="prix" id="prix">
-                        <div class="checkboxes">
-                            <label for="pizza">Pizza:<input type="radio" name="category" id="pizza"></label><br>
-                            <label for="spaghetti">Spaghetti: <input type="radio" name="category" id="spaghetti"></label><br>
-                            <label for="lazagna"> Lazagna: <input type="radio" name="category" id="lazagna"></label><br>
-                            <label for="sandwich">sandwich: <input type="radio" name="category" id="sandwich"></label><br>
-                            <label for="boisson"> Boisson : <input type="radio" name="category" id="boisson"></label><br>
-                        </div>
-                        <input id="submit" type="submit" value="ajouter">
-                    </form>
-                </div>
-            </div>
-        </article>
+    <div class="menu-gallery">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Catégorie</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- lignes générées par JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ajouter">
+      <form id="menu-form">
+        <label>Nom:
+          <input type="text" id="nom" required>
+        </label><br>
+
+        <label>Prix:
+          <input type="number" id="prix" required>
+        </label><br>
+
+        <div class="checkboxes">
+          <label><input type="radio" name="category" id="pizza"> Pizza</label><br>
+          <label><input type="radio" name="category" id="spaghetti"> Spaghetti</label><br>
+          <label><input type="radio" name="category" id="lazagna"> Lazagna</label><br>
+          <label><input type="radio" name="category" id="sandwich"> Sandwich</label><br>
+          <label><input type="radio" name="category" id="boisson"> Boisson</label><br>
+        </div>
+
+        <input type="submit" value="Valider">
+      </form>
+    </div>
+
+  </div>
+</article>
+
         <!-- partie economie-->
         <article id="economie" class="panel ">
             <div class="economie-content">
@@ -163,36 +190,47 @@
             </div>
         </article>
         <!-- partie employee-->
-        <article id="employee" class="panel ">
-            <div class="employee-content">
-                <div class="employe-gallery">
-                    
-                </div>
-                <div class="modifier">
-                    <form  id="employe-form">
-                        <label for="name">Nom:</label>
-                        <input type="text" name="name" id="name"><br>
-                        <label for="prenom">Prenom:</label>
-                        <input type="text" name="prenom" id="prenom"><br>
-                        <label for="CIN">CIN:</label>
-                        <input type="text" name="CIN" id="CIN"><br>
-                        <label for="tel"> telephone:</label>
-                        <input type="tel" name="Tel" id="tel" placeholder="+212 *********"><br>
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email"><br>
-                        <label for="salaire">Salaire:</label>
-                        <input type="number" name="salaire" id="salaire" min="3000"><br>
-                        <label for="photo">Photo:</label>
-                        <input type="file" id="photo" accept="image/*"><br>
-                        <label for="gerant">Gerant: <input type="checkbox" name="fonction" id="gerant" class="fonction"></label>
-                        <label for="cuisinier">Cuisinier: <input type="checkbox" name="fonction" id="cuisinier" class="fonction"></label>
-                        <label for="serveur">Serveur: <input type="checkbox" name="fonction" id="serveur" class="fonction"></label>
-                        <label for="livreur">livreur: <input type="checkbox" name="fonction" id="livreur" class="fonction"></label><br>
-                        <input type="submit" value="Valider">
-                    </form>
-                </div>
-            </div>
-        </article>
+        <article id="employee" class="panel">
+  <div class="employee-content">
+
+    <div class="employe-info">
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>CIN</th>
+            <th>Salaire</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- lignes générées par JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modifier">
+      <form id="employe-form">
+        <label>Nom: <input type="text" id="name"></label><br>
+        <label>Prénom: <input type="text" id="prenom"></label><br>
+        <label>CIN: <input type="text" id="CIN"></label><br>
+        <label>Téléphone: <input type="tel" id="tel"></label><br>
+        <label>Email: <input type="email" id="email"></label><br>
+        <label>Salaire: <input type="number" id="salaire" min="3000"></label><br>
+
+        <label><input type="checkbox" class="fonction" id="gerant"> Gérant</label>
+        <label><input type="checkbox" class="fonction" id="cuisinier"> Cuisinier</label>
+        <label><input type="checkbox" class="fonction" id="serveur"> Serveur</label>
+        <label><input type="checkbox" class="fonction" id="livreur"> Livreur</label><br><br>
+
+        <input type="submit" value="Valider">
+      </form>
+    </div>
+
+  </div>
+</article>
+
         <!-- partie settings-->
         <article id="settings" class="panel ">
             <div class="settings-content">
