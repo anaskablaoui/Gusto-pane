@@ -87,54 +87,43 @@
                 </div>
         </article>
         <!-- partie restaurants-->
-        <article id="restaurants" class="panel">
-  <div class="restaurants-content">
+        <article id="restaurants" class="panel active">
+            <div class="restaurants-content">
+                <div class="ensemble-restau">
+                    <div class="table-restaut">
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Adress</th>
+                                    <th>table</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-    <div class="ensemble-resto">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="Rform">
+                        <form id="form-restaut">
+                            <label for="Rnom">Nom:</label>
+                            <input type="text" id="Rnom" name="Rnom"><br>
+                            <label for="Radress">Adress:</label>
+                            <textarea name="Radress" id="Radress"></textarea><br>
+                            <label for="Rtable">Table:</label>
+                            <input type="number"><br>
+                            <input type="submit">
+                        </form>
+                    </div>
+                </div>
+                <div class="info-restaut">
 
-      <div class="buttons">
-        <button id="btn-ajouter">Ajouter</button>
-        <button id="btn-annuler">Annuler</button>
-      </div>
-
-      <form class="form" id="restaurant-form">
-        <label>Nom:</label>
-        <input type="text" id="rNom" required>
-
-        <label>Adresse:</label>
-        <textarea id="rAdresse" required></textarea>
-
-        <label>Tables:</label>
-        <input type="range" id="rTable" min="0" max="100">
-        <span id="table-value">0</span>
-
-        <input type="submit" value="Enregistrer">
-      </form>
-
-      <div class="restaurant-gallery">
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Adresse</th>
-        <th>Tables</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- JS injecte ici -->
-    </tbody>
-  </table>
-</div>
-
-
-    </div>
-
-  </div>
+                </div>
+            </div>
 </article>
 
         <!-- partie Menu-->
-       <article id="Menu" class="panel active">
+       <article id="Menu" class="panel ">
   <div class="Menu-content">
 
     <div class="menu-gallery">

@@ -1,16 +1,16 @@
-{
-  "restaurants": [
-    {
-      "id": 1,
-      "nom": "Gusto & Pane Centre",
-      "adresse": "Casablanca Centre",
-      "tables": 20
-    },
-    {
-      "id": 2,
-      "nom": "Gusto & Pane Marina",
-      "adresse": "Casablanca Marina",
-      "tables": 15
-    }
-  ]
-}
+  {
+    "restaurants": [
+      {
+        "id": 1,
+        "nom": "Gusto & Pane Centre",
+        "adresse": "Casablanca Centre",
+        "tables": 20
+      },
+      {
+        "id": 2,
+        "nom": "Gusto & Pane Marina",
+        "adresse": "Casablanca Marina",
+        "tables": 15
+      }
+    ]
+  }

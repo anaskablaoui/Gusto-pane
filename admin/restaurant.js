@@ -1,89 +1,104 @@
-const tableBody = document.querySelector('.restaurant-gallery tbody');
-const form = document.getElementById('restaurant-form');
+// ===================== SELECTEURS =====================
+const tableBody = document.querySelector('.table-restaut table tbody');
+const formRestaurant = document.getElementById('form-restaut');
 
-const rNom = document.getElementById('rNom');
-const rAdresse = document.getElementById('rAdresse');
-const rTable = document.getElementById('rTable');
-const tableValue = document.getElementById('table-value');
+const inputNom = document.getElementById('Rnom');
+const inputAdresse = document.getElementById('Radress');
+const inputTable = document.querySelector('#form-restaut input[type="number"]');
 
+// ===================== DONNÉES =====================
 let restaurants = [];
-let restoSelected = null;
+let restaurantSelected = null;
 let nextId = 1;
 
-/* slider */
-rTable.addEventListener('input', () => {
-  tableValue.textContent = rTable.value;
-});
-
-/* fetch JSON */
-fetch('../data/restaurants.json')
+// ===================== FETCH JSON =====================
+fetch('../data/restaurant.json')
   .then(res => res.json())
   .then(data => {
     restaurants = data.restaurants || [];
-    nextId = restaurants.length
-      ? Math.max(...restaurants.map(r => r.id)) + 1
-      : 1;
 
-    afficher();
+    // calcul du prochain ID
+    const maxId = restaurants.length
+      ? Math.max(...restaurants.map(r => r.id))
+      : 0;
+    nextId = maxId + 1;
+
+    afficherRestaurants(restaurants);
   })
-  .catch(err => console.error(err));
+  .catch(err => console.log('Erreur JSON :', err));
 
-function afficher() {
+// ===================== AFFICHAGE =====================
+function afficherRestaurants(liste) {
   tableBody.innerHTML = '';
 
-  restaurants.forEach(r => {
+  liste.forEach(rest => {
     const tr = document.createElement('tr');
+    tr.dataset.id = rest.id;
+
     tr.innerHTML = `
-      <td>${r.nom}</td>
-      <td>${r.adresse}</td>
-      <td>${r.tables}</td>
+      <td>${rest.nom}</td>
+      <td>${rest.adresse}</td>
+      <td>${rest.tables}</td>
       <td>
-        <button class="edit" data-id="${r.id}">✏️</button>
-        <button class="del" data-id="${r.id}">🗑</button>
+        <button class="modifier" data-id="${rest.id}">Modifier</button>
+        <button class="supprimer" data-id="${rest.id}">Supprimer</button>
       </td>
     `;
+
     tableBody.appendChild(tr);
   });
 }
 
-/* modifier / supprimer */
-tableBody.addEventListener('click', e => {
+// ===================== CLICK TABLE (MODIFIER / SUPPRIMER) =====================
+tableBody.addEventListener('click', function (e) {
   const id = Number(e.target.dataset.id);
   if (!id) return;
 
-  if (e.target.classList.contains('edit')) {
-    restoSelected = restaurants.find(r => r.id === id);
-    rNom.value = restoSelected.nom;
-    rAdresse.value = restoSelected.adresse;
-    rTable.value = restoSelected.tables;
-    tableValue.textContent = restoSelected.tables;
+  // ---------- MODIFIER ----------
+  if (e.target.classList.contains('modifier')) {
+    restaurantSelected = restaurants.find(r => r.id === id);
+    if (!restaurantSelected) return;
+
+    inputNom.value = restaurantSelected.nom;
+    inputAdresse.value = restaurantSelected.adresse;
+    inputTable.value = restaurantSelected.tables;
   }
 
-  if (e.target.classList.contains('del')) {
+  // ---------- SUPPRIMER ----------
+  if (e.target.classList.contains('supprimer')) {
     restaurants = restaurants.filter(r => r.id !== id);
-    afficher();
+    afficherRestaurants(restaurants);
+
+    // reset formulaire si on supprime l'élément sélectionné
+    if (restaurantSelected && restaurantSelected.id === id) {
+      restaurantSelected = null;
+      formRestaurant.reset();
+    }
   }
 });
 
-/* submit */
-form.addEventListener('submit', e => {
+// ===================== SUBMIT FORM (AJOUT / MODIFICATION) =====================
+formRestaurant.addEventListener('submit', function (e) {
   e.preventDefault();
 
-  if (restoSelected) {
-    restoSelected.nom = rNom.value;
-    restoSelected.adresse = rAdresse.value;
-    restoSelected.tables = rTable.value;
-    restoSelected = null;
-  } else {
-    restaurants.push({
+  if (restaurantSelected === null) {
+    // ---------- AJOUT ----------
+    const nouveauRestaurant = {
       id: nextId++,
-      nom: rNom.value,
-      adresse: rAdresse.value,
-      tables: rTable.value
-    });
+      nom: inputNom.value,
+      adresse: inputAdresse.value,
+      tables: Number(inputTable.value)
+    };
+    restaurants.push(nouveauRestaurant);
+  } else {
+    // ---------- MODIFICATION ----------
+    restaurantSelected.nom = inputNom.value;
+    restaurantSelected.adresse = inputAdresse.value;
+    restaurantSelected.tables = Number(inputTable.value);
+
+    restaurantSelected = null;
   }
 
-  form.reset();
-  tableValue.textContent = 0;
-  afficher();
+  afficherRestaurants(restaurants);
+  formRestaurant.reset();
 });
