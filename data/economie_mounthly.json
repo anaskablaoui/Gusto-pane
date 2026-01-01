@@ -1,0 +1,44 @@
+{
+    "2024":[
+  {"annes": 2024, "mois": 1, "totale": 70000},
+  {"annes": 2024, "mois": 2, "totale": 62000},
+  {"annes": 2024, "mois": 3, "totale": 78000},
+  {"annes": 2024, "mois": 4, "totale": 66000},
+  {"annes": 2024, "mois": 5, "totale": 85000},
+  {"annes": 2024, "mois": 6, "totale": 93000},
+  {"annes": 2024, "mois": 7, "totale": 100000},
+  {"annes": 2024, "mois": 8, "totale": 89000},
+  {"annes": 2024, "mois": 9, "totale": 81000},
+  {"annes": 2024, "mois": 10, "totale": 108000},
+  {"annes": 2024, "mois": 11, "totale": 115000},
+  {"annes": 2024, "mois": 12, "totale": 122000}
+    ],
+    "2025":[
+  {"annes": 2025, "mois": 1, "totale": 74000},
+  {"annes": 2025, "mois": 2, "totale": 68500},
+  {"annes": 2025, "mois": 3, "totale": 82000},
+  {"annes": 2025, "mois": 4, "totale": 71500},
+  {"annes": 2025, "mois": 5, "totale": 89000},
+  {"annes": 2025, "mois": 6, "totale": 97000},
+  {"annes": 2025, "mois": 7, "totale": 104000},
+  {"annes": 2025, "mois": 8, "totale": 93000},
+  {"annes": 2025, "mois": 9, "totale": 85000},
+  {"annes": 2025, "mois": 10, "totale": 112000},
+  {"annes": 2025, "mois": 11, "totale": 119000},
+  {"annes": 2025, "mois": 12, "totale": 131000}
+    ],
+    "2026":[
+  {"annes": 2026, "mois": 1, "totale": 78000},
+  {"annes": 2026, "mois": 2, "totale": 70000},
+  {"annes": 2026, "mois": 3, "totale": 86000},
+  {"annes": 2026, "mois": 4, "totale": 76500},
+  {"annes": 2026, "mois": 5, "totale": 93000},
+  {"annes": 2026, "mois": 6, "totale": 101000},
+  {"annes": 2026, "mois": 7, "totale": 108000},
+  {"annes": 2026, "mois": 8, "totale": 97000},
+  {"annes": 2026, "mois": 9, "totale": 89000},
+  {"annes": 2026, "mois": 10, "totale": 116000},
+  {"annes": 2026, "mois": 11, "totale": 123000},
+  {"annes": 2026, "mois": 12, "totale": 140000}
+    ]
+}

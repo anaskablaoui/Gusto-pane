@@ -10,6 +10,8 @@
     <script src="menu.js" defer> </script>
     <script src="restaurant.js" defer></script>
     <script src="stock.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="charts.js" defer></script>
 </head>
 <body>
     <aside>
@@ -32,14 +34,14 @@
         <article id="Home" class="panel ">
             <div class="home-content">
                 <div class="stats">
-                    
+                   <canvas id="courbe"></canvas> 
                 </div>
                 <div class="info">
                     <div class="calender">
 
                     </div>
                     <div class="notif">
-                        
+                        <canvas id="favDonnut"></canvas>
                     </div>
                 </div>
             </div>
@@ -87,54 +89,43 @@
                 </div>
         </article>
         <!-- partie restaurants-->
-        <article id="restaurants" class="panel">
-  <div class="restaurants-content">
+        <article id="restaurants" class="panel active">
+            <div class="restaurants-content">
+                <div class="ensemble-restau">
+                    <div class="table-restaut">
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Adress</th>
+                                    <th>table</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-    <div class="ensemble-resto">
-
-      <div class="buttons">
-        <button id="btn-ajouter">Ajouter</button>
-        <button id="btn-annuler">Annuler</button>
-      </div>
-
-      <form class="form" id="restaurant-form">
-        <label>Nom:</label>
-        <input type="text" id="rNom" required>
-
-        <label>Adresse:</label>
-        <textarea id="rAdresse" required></textarea>
-
-        <label>Tables:</label>
-        <input type="range" id="rTable" min="0" max="100">
-        <span id="table-value">0</span>
-
-        <input type="submit" value="Enregistrer">
-      </form>
-
-      <div class="restaurant-gallery">
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Adresse</th>
-        <th>Tables</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- JS injecte ici -->
-    </tbody>
-  </table>
-</div>
-
-
-    </div>
-
-  </div>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="Rform">
+                        <form id="form-restaut">
+                            <label for="Rnom">Nom:</label>
+                            <input type="text" id="Rnom" name="Rnom"><br>
+                            <label for="Radress">Adress:</label>
+                            <textarea name="Radress" id="Radress"></textarea><br>
+                            <label for="Rtable">Table:</label>
+                            <input type="number"><br>
+                            <input type="submit">
+                        </form>
+                    </div>
+                </div>
+                <div class="info-restaut">
+                  <canvas id="restaurant-courbe"></canvas>
+                </div>
+            </div>
 </article>
 
         <!-- partie Menu-->
-       <article id="Menu" class="panel active">
+       <article id="Menu" class="panel ">
   <div class="Menu-content">
 
     <div class="menu-gallery">
@@ -182,10 +173,10 @@
         <article id="economie" class="panel ">
             <div class="economie-content">
                 <div class="spends-charts">
- 
+                    <canvas id="recette"></canvas>
                 </div>
                 <div class="graph-economie">
-
+                    <canvas id="depense"></canvas>
                 </div>
             </div>
         </article>

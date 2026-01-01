@@ -1,0 +1,12 @@
+[
+  { "id": 1, "nom": "Gusto & Pane Centre", "totale": 500000 },
+  { "id": 2, "nom": "Gusto & Pane Marina", "totale": 420000 },
+  { "id": 3, "nom": "Gusto & Pane Rabat", "totale": 350000 },
+  { "id": 4, "nom": "Gusto & Pane Marrakech", "totale": 280000 },
+  { "id": 5, "nom": "Gusto & Pane Tanger", "totale": 200000 },
+  { "id": 6, "nom": "Gusto & Pane Agadir", "totale": 150000 },
+  { "id": 7, "nom": "Gusto & Pane Fès", "totale": 230000 },
+  { "id": 8, "nom": "Gusto & Pane El Jadida", "totale": 170000 },
+  { "id": 9, "nom": "Gusto & Pane Oujda", "totale": 190000 },
+  { "id": 10, "nom": "Gusto & Pane Tétouan", "totale": 210000 }
+]
