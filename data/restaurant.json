@@ -11,6 +11,55 @@
         "nom": "Gusto & Pane Marina",
         "adresse": "Casablanca Marina",
         "tables": 15
+      },
+      {
+        "id": 3,
+        "nom": "Gusto & Pane Rabat",
+        "adresse": "Rabat Agdal",
+        "tables": 12
+      },
+      {
+        "id": 4,
+        "nom": "Gusto & Pane Marrakech",
+        "adresse": "Marrakech Medina",
+        "tables": 18
+      },
+      {
+        "id": 5,
+        "nom": "Gusto & Pane Tanger",
+        "adresse": "Tanger Centre",
+        "tables": 10
+      },
+      {
+        "id": 6,
+        "nom": "Gusto & Pane Agadir",
+        "adresse": "Agadir Marina",
+        "tables": 8
+      },
+      {
+        "id": 7,
+        "nom": "Gusto & Pane Fès",
+        "adresse": "Fès Ville Nouvelle",
+        "tables": 14
+      },
+      {
+        "id": 8,
+        "nom": "Gusto & Pane El Jadida",
+        "adresse": "El Jadida Centre",
+        "tables": 9
+      },
+      {
+        "id": 9,
+        "nom": "Gusto & Pane Oujda",
+        "adresse": "Oujda Boulevard",
+        "tables": 11
+      },
+      {
+        "id": 10,
+        "nom": "Gusto & Pane Tétouan",
+        "adresse": "Tétouan Medina",
+        "tables": 13
       }
     ]
   }
+

@@ -1,0 +1,8 @@
+[
+  { "categorie": "Pizza", "total": 420 },
+  { "categorie": "Pasta", "total": 310 },
+  { "categorie": "Boissons", "total": 270 },
+  { "categorie": "Desserts", "total": 150 },
+  { "categorie": "Salades", "total": 200 },
+  { "categorie": "Entrées", "total": 180 }
+]
