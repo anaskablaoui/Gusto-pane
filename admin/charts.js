@@ -104,7 +104,7 @@ fetch('../data/recette_monthly.json')
         data: recette25,
         backgroundColor: '#2e8b56a4',
         borderColor: '#2e8b56ff',
-        borderWisth: 1 
+        borderWidth: 1 
     },
     {
         label: 'recette 2026',
@@ -164,7 +164,7 @@ fetch('../data/depense_monthly.json')
         data: depense25,
         backgroundColor: '#2e8b56a4',
         borderColor: '#2e8b56ff',
-        borderWisth: 1 
+        borderWidth: 1 
     },
     {
         label: 'depense 2026',
@@ -198,15 +198,47 @@ let depenseCharts =new Chart( depense,{
 })         
     }
     )
-    .catch(error => console.log(`erreur recette`));
+    .catch(error => console.log(`erreur recette`+error));
+
+//restaurant courbe
+//restaurant courbe
+const restoCanvas = document.getElementById('resto-courbe');
+if (!restoCanvas) {
+    console.error("Canvas avec l'id 'resto-courbe' introuvable. Aucune courbe restaurant affichée.");
+} else {
+    const restaurants = restoCanvas.getContext('2d');
+
+    fetch('../data/restaurant_commerce.json')
+        .then(response => response.json())
+        .then(data => {
+            const Rlabels = data.map(item => item.nom || '');
+            const Rtotal = data.map(item => Number(item.totale) || 0);
+
+            const dataCfg = {
+                labels: Rlabels,
+                datasets: [{
+                    label: 'Rapport recette depense Restaurant',
+                    data: Rtotal,
+                    backgroundColor: '#2e648ba4',
+                    borderColor: '#2e648bff',
+                    borderWidth: 1
+                }]
+            };
+
+            new Chart(restaurants, {
+                type: 'bar',
+                data: dataCfg,
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: { beginAtZero: true }
+                    },
+                    plugins: {
+                        title: { display: true, text: 'Rapport economie Restaurants' }
+                    }
+                }
+            });
+        })
+        .catch(error => console.error('Erreur JSON restaurant:', error));
+}
     
-
-restaurants = document.getElementById('restaurant-courbe').getContext('2d');
-
-fetch('../data/restaurant_commerce.json')
-    .then(response => response.json())
-    .then(data => 
-    {
-        
-    }
-    )
