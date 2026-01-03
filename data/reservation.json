@@ -1,0 +1,14 @@
+{
+  "reservations": [
+    {
+      "id": 1,
+      "client": "Ahmed El Amrani",
+      "date": "2026-01-15"
+    },
+    {
+      "id": 2,
+      "client": "Fatima Benali",
+      "date": "2026-01-16"
+    }
+  ]
+}

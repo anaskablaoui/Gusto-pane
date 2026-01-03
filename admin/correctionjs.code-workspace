@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../Desktop/correctionjs"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "admin",
+		"liveServer.settings.port": 5501
+	}
+}

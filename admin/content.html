@@ -9,26 +9,30 @@
     <script src="employe.js" defer></script>
     <script src="menu.js" defer> </script>
     <script src="restaurant.js" defer></script>
+    <script src="reservation.js" defer></script>
     <script src="stock.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="charts.js" defer></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <aside>
-        <!-- aside navigation bar-->
-        <h2 class="mister"> Bonjour Monsieur</h2>
-        <nav class="nav-container">
-            <ul class="nav-bar">
-                <li><a class="selection" data-target="Home" href="#">Home</a></li>
-                <li><a class="selection" data-target="stocks" href="#">stocks</a></li>
-                <li><a class="selection" data-target="restaurants" href="#">restaurants</a></li>
-                <li><a class="selection" data-target="Menu" href="#">Menu</a></li>
-                <li><a class="selection" data-target="economie" href="#">economie</a></li>
-                <li><a class="selection" data-target="employee" href="#">employee</a></li>
-                
-            </ul>
-        </nav>
-    </aside>
+    <input type="checkbox" id="toggler">
+<label for="toggler" class="fas fa-bars"></label>
+
+<aside class="sidebar">
+    <h2 class="mister">Bonjour Monsieur</h2>
+    <ul>
+        <li><a class="selection" data-target="Home" href="#">Home</a></li>
+        <li><a class="selection" data-target="stocks" href="#">stocks</a></li>
+        <li><a class="selection" data-target="restaurants" href="#">restaurants</a></li>
+        <li><a class="selection" data-target="Menu" href="#">Menu</a></li>
+        <li><a class="selection" data-target="economie" href="#">economie</a></li>
+        <li><a class="selection" data-target="reservation" href="#">reservation</a></li>
+        <li><a class="selection" data-target="employee" href="#">employee</a></li>
+    </ul>
+</aside>
+
     <main>
         <!-- partie home-->
         <article id="Home" class="panel active">
@@ -49,9 +53,7 @@
         <!-- partie stocks-->
         <article id="stocks" class="panel ">
                 <div class="stocks-content">
-                    <div class="Charts">
-
-                    </div>
+                   
                     <div class="crud-stock">
                         <div class="envoyer-au-restaurant">
                             <!-- Liste des stocks -->
@@ -68,7 +70,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="modifier">
+                        <div class="modifiers">
                             <!-- Formulaire pour ajouter / modifier un stock -->
                             <form id="stock-form">
                                 <input type="hidden" id="sIndex" value="">
@@ -98,7 +100,8 @@
                                 <tr>
                                     <th>Nom</th>
                                     <th>Adress</th>
-                                    <th>table</th>
+                                    <th>Table</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -180,6 +183,40 @@
                 </div>
             </div>
         </article>
+         <!-- partie reservation-->
+         <article id="reservation" class="panel">
+    <div class="reservation-content">
+        <div class="ajouterr">
+            <form id="reserv-form">
+                <label>Nom du client:
+                    <input type="text" id="reservationClient" placeholder="Ex: Ahmed El Amrani" required>
+                </label><br><br>
+                
+                <label>Date de réservation:
+                    <input type="date" id="reservationDate" required>
+                </label><br><br>
+                
+                <input type="submit" value="Valider">
+            </form>
+        </div>
+        
+        <div class="reserv-info">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="reservationTable">
+                    <!-- Les réservations seront insérées ici par JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</article>
+
         <!-- partie employee-->
         <article id="employee" class="panel">
   <div class="employee-content">
@@ -201,7 +238,7 @@
       </table>
     </div>
 
-    <div class="modifier">
+    <div class="modifierr">
       <form id="employe-form">
         <label>Nom: <input type="text" id="name"></label><br>
         <label>Prénom: <input type="text" id="prenom"></label><br>

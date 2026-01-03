@@ -27,50 +27,75 @@ body {
     overflow: hidden;
 }
 
-/* ASIDE (SIDEBAR) */
-aside {
+/* Sidebar */
+.sidebar {
     background: linear-gradient(70deg, #D9534F, #2E8B57);
     width: 250px;
     height: 100vh;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 2rem 0;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
-/* ASIDE CONTENT */
+/* Cache le checkbox */
+#toggler {
+    display: none;
+}
+
+/* Cache l'icône hamburger par défaut */
+.fa-bars {
+    display: none;
+}
+
 .mister {
-    margin-top: 40px;
-    margin-bottom: 30px;
-    color: #2B2B2B;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.nav-bar {
+.sidebar ul {
     list-style: none;
-    width: 100%;
-    text-align: center;
+    padding: 0;
+    margin: 0;
 }
 
-.nav-bar li {
-    margin: 20px 0;
+.sidebar ul li {
+    margin: 0.5rem 0;
 }
 
-.nav-bar li a {
-    color: #FFF8F2;
+.sidebar ul li a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
     font-size: 1.1rem;
-    font-family: sans-serif;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.nav-bar li a:hover {
-    color: #2B2B2B;
-    border-bottom: 1px solid #2B2B2B;
-    text-shadow: 1px 2px 2px #2B2B2B;
+
+
+.sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    padding-left: 2rem;
+    letter-spacing: 1px;
 }
+
+
+
+
 
 /* MAIN */
 main {
+    margin-left: 250px; /* Pushes main to start after sidebar */
     flex: 1;
     height: 100vh;
     padding: 40px;
@@ -81,7 +106,7 @@ main {
 .panel {
     display: none;
     width: 100%;
-    height: calc(100vh - 80px);
+    height:100%;
 }
 
 .panel.active {
@@ -89,9 +114,12 @@ main {
     animation: fade .4s ease;
 }
 
+
 /* =========================
    HOME
 ========================= */
+
+
 
 #Home .home-content {
     display: flex;
@@ -99,6 +127,7 @@ main {
     height: 100%;
     gap: 20px;
     align-items: center;
+      padding: 20px;
 }
 
 .home-content .stats {
@@ -124,330 +153,883 @@ main {
     background-color: #FFF8F2;
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.35);
+    padding: 20px;
 }
+
+
+
+
 
 /* =========================
    STOCKS
 ========================= */
 
+
+
+/* Stocks Content Layout */
 .stocks-content {
     display: flex;
-    justify-content: space-between;
-    height: 100%;
     gap: 20px;
+    height: 100%;
+    padding: 20px;
 }
 
-.stocks-content .Charts {
-    width: 60%;
-    height: 85%;
-    background-color: #FFF8F2;
-    border-radius: 20px;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.35);
-}
-
-.stocks-content .crud-stock {
-    width: 35%;
-    height: 85%;
+.crud-stock {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
 }
 
-.envoyer-au-restaurant,
-.modifier {
-    height: 48%;
+/* Table Box - Left Side */
+.envoyer-au-restaurant {
+    width: 60%;
     background-color: #FFF8F2;
     border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.35);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    overflow-y: auto;
 }
 
-/* Stock table and form styles */
+/* Form Box - Right Side */
+.modifiers {
+    width: 35%;
+    background-color: #FFF8F2;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+}
+
+/* Stock Table */
 #stock-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 12px 8px;
-}
-#stock-table thead th {
-    background: linear-gradient(90deg,#2E8B57,#D9534F);
-    color: #fff;
-    padding: 10px;
-    text-align: left;
-    font-size: 0.95rem;
-}
-#stock-table tbody td {
-    padding: 10px;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-#stock-table tbody tr:hover {
-    background-color: rgba(46,139,87,0.06);
 }
 
+#stock-table thead th {
+    background: linear-gradient(90deg, #2E8B57, #D9534F);
+    color: white;
+    padding: 12px;
+    text-align: left;
+    border-radius: 3px;
+}
+
+#stock-table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#stock-table tbody tr:hover {
+    background-color: rgba(46,139,87,0.1);
+}
+
+/* Stock Form */
 #stock-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 16px;
+    gap: 15px;
 }
+
 #stock-form label {
     font-weight: 600;
-    font-size: 0.9rem;
+    color: #333;
 }
+
 #stock-form input[type="number"],
 #stock-form input[type="text"] {
+    width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 6px;
+    font-size: 14px;
+    margin-top: 5px;
 }
+
 #stock-form button {
-    padding: 10px 14px;
+    padding: 10px;
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    background-color: #2E8B57;
+    font-weight: 600;
     color: #fff;
-}
-#stock-form button#sReset {
-    background-color: #D9534F;
-}
-#stock-form .action-row {
-    display: flex;
-    gap: 8px;
 }
 
-.edit-stock {
-    padding: 6px 10px;
-    border-radius: 6px;
-    border: none;
-    background-color: #F0AD4E;
-    color: #fff;
-    cursor: pointer;
+#sSubmit {
+    background-color: #2E8B57;
 }
+
+#sReset {
+    background-color: #D9534F;
+}
+
+#stock-form button:hover {
+    opacity: 0.9;
+}
+
+/* Action Buttons */
+.edit-stock {
+    padding: 6px 12px;
+    background-color: #F0AD4E;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.delete-stock {
+    padding: 6px 12px;
+    background-color: #D9534F;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.edit-stock:hover,
+.delete-stock:hover {
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .crud-stock {
+        flex-direction: column;
+    }
+    
+    .envoyer-au-restaurant,
+    .modifiers {
+        width: 100%;
+    }
+}
+
 
 /* =========================
    RESTAURANTS
 ========================= */
 
-#restaurants .restaurants-content {
+
+
+.restaurants-content {
     display: flex;
-    justify-content: space-between;
-    height: 100%;
+    flex-direction: column; /* Changé pour empiler verticalement */
     gap: 20px;
-    flex-direction: column;
-}
-
-.ensemble-restau
-{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 40%
-    
-}
-
-.table-restaut
-{
-    background-color: #FFF8F2;
-    box-shadow: 0px 5px 10px #2B2B2B;
-    border-radius: 10px;
-    width: 40%;
     height: 100%;
+    padding: 20px;
 }
 
-.Rform
-{
-    background-color: #FFF8F2;
-    height: 100%;
-    width: 45%;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px #2B2B2B;
+.ensemble-restau {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    height: 48%; /* Prend environ la moitié supérieure */
 }
 
-.info-restaut
-{
-    background-color: #FFF8F2;
-    width: 100%;
-    height: 50%;
-    border-radius:10px ;
-    box-shadow: 0px 5px 10px #2B2B2B;
-
-}
-/* =========================
-   GENERAL FORMS
-========================= */
-
-form label {
-    margin-top: 10px;
-}
-
-form input,
-form textarea {
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-}
-
-.Menu-content
-{
-    display: flex;
-    justify-content: space-around;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-}
-
-.Menu-content .menu-gallery
-{
-    overflow-y: scroll;
-    width: 50%;
-    height: 80%;
-    display: flex;
-}
-
-.menu-gallery .gallery
-{
-    background-color: #FFF8F2;
-    margin: 10px;
-    width: 100px;
-    height: 80px;
-    border-radius: 5px;
-    box-shadow: 0px 10px 15px  #2B2B2B;
-}
-
-.Menu-content .ajouter
-{
-    width: 45%;
-    height:75% ;
-    text-align: center;
+.Rform {
     background-color: #FFF8F2;
     border-radius: 20px;
-    box-shadow: 0px 5px 10px #2B2B2B;
-    
-}
-
-.ajouter input
-{
-    background-color: #ccc;
-    margin: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     padding: 20px;
-    border-radius: 5px;
+    overflow-y: auto;
 }
 
-#submit:hover
-{
-    background-color: #2E8B57;
-    transition: 0.2s;
+.table-restaut {
+    background-color: #FFF8F2;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    overflow-y: auto;
 }
 
-.economie-content
-{
+#form-restaut {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#form-restaut label {
+    font-weight: 600;
+    color: #333;
+}
+
+#form-restaut input[type="text"],
+#form-restaut input[type="number"],
+#form-restaut textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+#form-restaut textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+#form-restaut input[type="submit"] {
+    padding: 10px;
+    background-color: #2E8B57;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#form-restaut input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+.table-restaut table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-restaut table thead th {
+    background: linear-gradient(90deg, #2E8B57, #D9534F);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.table-restaut table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.table-restaut table tbody tr:hover {
+    background-color: rgba(46,139,87,0.1);
+}
+
+/* INFO RESTAURANTS - Chart en bas */
+.info-restaut {
+    width: 100%; /* Changé de 35% à 100% */
+    height: 48%; /* Prend environ la moitié inférieure */
+    background-color: #FFF8F2;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* INFO RESTAURANTS */
+
+
+
+
+/* =========================
+   CSS de la partie MENU
+========================= */
+
+
+form label {
+    margin-top: 20px;
+}
+
+
+.Menu-content {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+
+.ajouter {
+    width: 35%;
+    background-color: #FFF8F2;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+}
+
+.menu-gallery {
+    width: 60%;
+    background-color: #FFF8F2;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#menu-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#menu-form label {
+    font-weight: 600;
+    color: #333;
+}
+
+#menu-form input[type="text"],
+#menu-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 0;
+}
+
+.checkboxes label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+#menu-form input[type="submit"] {
+    padding: 10px;
+    background-color: #2E8B57;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#menu-form input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+.menu-gallery table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.menu-gallery table thead th {
+    background: linear-gradient(90deg, #2E8B57, #D9534F);
+    color: white;
+    padding: 12px;
+    text-align: left;
+   border-radius: 3px;
+}
+
+.menu-gallery table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu-gallery table tbody tr:hover {
+    background-color: rgba(46,139,87,0.1);
+}
+
+.modifier {
+    padding: 6px 12px;
+    background-color: #F0AD4E;
+        color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.supprimer {
+    padding: 6px 12px;
+    background-color: #D9534F;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.modifier:hover,
+.supprimer:hover {
+    opacity: 0.9;
+}
+
+
+/*CSS de partie ECONOMIE*/
+
+
+.economie-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     height: 100%;
     width: 100%;
-    align-items: center;
-    flex-direction: column;
-    
 }
 
 .economie-content .spends-charts {
-
     background-color: #FFF8F2;
-    height: 45%;
+    flex: 1;
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0px 10px 15px #2B2B2B;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
 }
 
 .economie-content .graph-economie {
-
     background-color: #FFF8F2;
-    height: 45%;
+    flex: 1;
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0px 10px 15px #2B2B2B;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
 }
 
-.employee-content
-{
+#recette,
+#depense {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/*CSS partie Reservation*/
+  .reservation-content {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
+    gap: 20px;
     height: 100%;
-    align-items: center;
 }
 
-.employee-content .employe-gallery
-{
-    display: flex;
-    overflow-y: scroll;
-    width: 45%;
-    height: 100%;
-
+.reservation-content .ajouterr {
+    width: 35%;
+    background-color: #FFF8F2;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
 }
-.employee-content .employe-gallery .gallery
-{
+
+.reserv-info {
+    width: 60%;
+    background-color: #FFF8F2;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#reserv-form {
     display: flex;
     flex-direction: column;
-    background-color: #FFF8F2;
-    width: 200px;
-    height: 300px;
-    margin: 5px;
-    border-radius: 5px;
-    box-shadow: 0px 10px 15px  #2B2B2B;
+    gap: 15px;
 }
-.employe-gallery .gallery .img
-{
+
+#reserv-form input[type="text"],
+#reserv-form input[type="date"] {
     width: 100%;
-    height: 50%;
-}
-
-.employee-content .modifier{
-    width: 45%;
-    height: 80%;
-    align-items: center;
-    text-align: center;   
-}
-
-.modifier form
-{
-    margin-top: 25%;
-    
-}
-
-.settings-content
-{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 100%;
-}
-
-.settings-content .profile
-{
-    background-color: #FFF8F2;
-    border-radius: 20px;
-    height: 60%;
-    width: 40%;
-    box-shadow: 0px 10px 15px #2B2B2B;
-}
-
-.settings-content .settings
-{
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-    display: flex;
-    flex-direction: column;
-    background-color: #FFF8F2;
-    border-radius: 20px;
-    box-shadow: 0px 10px 15px #2B2B2B;
-}
-
-.settings-content .settings input
-{
     padding: 10px;
-    border: solid 1px;
-    box-shadow: 0px 1px 2px #2B2B2B;
-    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
 }
+
+#reserv-form input[type="submit"] {
+    padding: 10px;
+    background-color: #2E8B57;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#reserv-form input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+.reserv-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.reserv-info table thead th {
+    background: linear-gradient(90deg, #2E8B57, #D9534F);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.reserv-info table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.reserv-info table tbody tr:hover {
+    background-color: rgba(46,139,87,0.1);
+}
+
+.reserv-info .modifier {
+    padding: 6px 12px;
+    background-color: #F0AD4E;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.reserv-info .supprimer {
+    padding: 6px 12px;
+    background-color: #D9534F;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reserv-info .modifier:hover,
+.reserv-info .supprimer:hover {
+    opacity: 0.9;
+}
+
+
+
+
+/*CSS partie EMPLOYEE*/
+
+
+.employee-content {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+
+.employe-info {
+    width: 60%;
+    background-color: #FFF8F2;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.employee-content .modifierr {
+    width: 35%;
+    background-color: #FFF8F2;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 20px;
+}
+
+.employe-info table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.employe-info table thead th {
+    background: linear-gradient(90deg, #2E8B57, #D9534F);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.employe-info table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.employe-info table tbody tr:hover {
+    background-color: rgba(46,139,87,0.1);
+}
+
+#employe-form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#employe-form label {
+    font-weight: 600;
+    color: #333;
+    display: block;
+}
+
+#employe-form input[type="text"],
+#employe-form input[type="tel"],
+#employe-form input[type="email"],
+#employe-form input[type="number"] {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+   
+}
+
+#employe-form label:has(.fonction) {
+    font-weight: normal;
+    display: inline-block;
+    width: 48%;
+    margin-right: 2%;
+}
+
+#employe-form input[type="submit"] {
+    padding: 10px;
+    background-color: #2E8B57;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#employe-form input[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+.employe-info .modifierr {
+    padding: 6px 12px;
+    background-color: #F0AD4E;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.employe-info .supprimer {
+    padding: 6px 12px;
+    background-color: #D9534F;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.employe-info .modifierr:hover,
+.employe-info .supprimer:hover {
+    opacity: 0.9;
+}
+
+
+
+@media (max-width: 768px) {
+    /* Sidebar */
+    .fa-bars {
+        display: block;
+        position: fixed;
+        top: 1.5rem;
+        left: 1.5rem;
+        font-size: 2.5rem;
+        color: #2E8B57;
+        cursor: pointer;
+        z-index: 1001;
+        background: #fff;
+        padding: 0.5rem 0.8rem;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .sidebar {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        transition: clip-path 0.4s ease;
+    }
+    
+    #toggler:checked ~ .sidebar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    
+    .sidebar ul li a {
+        padding: 1.2rem 1.5rem;
+        margin: 0.3rem 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+    }
+    
+    /* Main */
+    main {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    /* HOME */
+    #Home .home-content {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .home-content .stats {
+        width: 100%;
+        height: 400px;
+    }
+    
+    .home-content .info {
+        width: 100%;
+        height: auto;
+        gap: 15px;
+    }
+    
+    .home-content .info .calender,
+    .home-content .info .notif {
+        height: 300px;
+    }
+    
+    /* STOCKS */
+    .crud-stock {
+        flex-direction: column;
+    }
+    
+    .envoyer-au-restaurant,
+    .modifiers {
+        width: 100%;
+    }
+    
+    /* RESTAURANTS */
+    .ensemble-restau {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .info-restaut {
+        height: 400px;
+    }
+    
+    /* MENU */
+    .Menu-content {
+        flex-direction: column;
+    }
+    
+    .ajouter,
+    .menu-gallery {
+        width: 100%;
+    }
+    
+    /* ECONOMIE */
+    .economie-content .spends-charts,
+    .economie-content .graph-economie {
+        min-height: 300px;
+    }
+    
+    /* RESERVATION */
+    .reservation-content {
+        flex-direction: column;
+    }
+    
+    .reservation-content .ajouterr,
+    .reserv-info {
+        width: 100%;
+    }
+    
+    /* EMPLOYEE */
+    .employee-content {
+        flex-direction: column;
+    }
+    
+    .employe-info,
+    .employee-content .modifierr {
+        width: 100%;
+    }
+}
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+@media (max-width: 480px) {
+    /* Sidebar */
+    .sidebar {
+        width: 200px;
+    }
+    
+    .fa-bars {
+        font-size: 2rem;
+        top: 1rem;
+        left: 1rem;
+        padding: 0.4rem 0.6rem;
+    }
+    
+    .mister {
+        font-size: 1.2rem;
+        padding: 0 1rem;
+    }
+    
+    .sidebar ul li a {
+        font-size: 0.95rem;
+        padding: 1rem;
+    }
+    
+    /* Main */
+    main {
+        padding: 10px;
+    }
+    
+    /* HOME */
+    #Home .home-content {
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .home-content .stats {
+        height: 350px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    .home-content .info {
+        gap: 10px;
+    }
+    
+    .home-content .info .calender,
+    .home-content .info .notif {
+        height: 250px;
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    /* Toutes les cartes */
+    .Rform,
+    .table-restaut,
+    .modifiers,
+    .envoyer-au-restaurant,
+    .ajouter,
+    .menu-gallery,
+    .ajouterr,
+    .reserv-info,
+    .modifierr,
+    .employe-info,
+    .spends-charts,
+    .graph-economie,
+    .info-restaut {
+        padding: 15px;
+        border-radius: 15px;
+    }
+    
+    /* Tableaux */
+    table {
+        font-size: 0.85rem;
+    }
+    
+    table thead th,
+    table tbody td {
+        padding: 8px;
+    }
+    
+    /* Boutons */
+    .modifier,
+    .supprimer,
+    .edit-stock,
+    .delete-stock,
+    .modifierr {
+        padding: 4px 8px;
+        font-size: 0.85rem;
+    }
+    
+    /* Formulaires */
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="date"],
+    textarea {
+        font-size: 14px;
+    }
+}
+
+
 
