@@ -12,6 +12,7 @@ const authentification = document.getElementById('authentification');
 authentification.addEventListener('submit', function (e) {
     e.preventDefault();
 
+    //prendre les valeur saisie au clavier 
     const matricule = document.getElementById('Matricule').value.trim();
     const password = document.getElementById('password').value.trim();
 
@@ -21,10 +22,10 @@ authentification.addEventListener('submit', function (e) {
     );
 
     if (adminTrouve) {
-        // ✅ Authentification réussie
+        // authentification reussite 
         window.location.href = 'content.html';
     } else {
-        // ❌ Erreur
+        // Erreur d'authentificaation
         alert('Matricule ou mot de passe incorrect');
     }
 });

@@ -1,3 +1,5 @@
+//code de transition pour la navigationm bar
+
 const selectors = document.querySelectorAll('.selection');
 const articles = document.querySelectorAll('.panel');
 

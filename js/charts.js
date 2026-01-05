@@ -4,6 +4,8 @@ let category= [];
 let categoryInfo=[];
 
 let mois=['Jan' , 'Fev', 'Mar', 'Avr', 'Mai', 'juin' ,'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+//chart lineaire de l'economie (rapport recette - depenmse )
 fetch('../data/economie_mounthly.json')
     .then(response => response.json())
     .then(data => {
@@ -43,7 +45,7 @@ let ecoChart =new Chart(ctx ,{
     )
     .catch(error => console.log('Erreur JSON' + error));
 
-
+// chart doughnut sur le nombre d'achat par categories
 let favctx = document.getElementById('favDonnut').getContext('2d');
 fetch('../data/repartition_ventes.json')
     .then(response => response.json())
@@ -82,6 +84,7 @@ fetch('../data/repartition_ventes.json')
 
 let recette = document.getElementById('recette').getContext('2d');
 
+//chart bar de recette des anne 2024 2025 2026 
 fetch('../data/recette_monthly.json')
     .then(response => response.json())
     .then(data =>
@@ -140,7 +143,7 @@ let recetteCharts =new Chart( recette,{
     )
     .catch(error => console.log(`erreur recette`));
 
-
+//chart bar de depense des anne 2024 2025 2026 
 const depense = document.getElementById('depense').getContext('2d');
 fetch('../data/depense_monthly.json')
     .then(response => response.json())
@@ -200,8 +203,8 @@ let depenseCharts =new Chart( depense,{
     )
     .catch(error => console.log(`erreur recette`+error));
 
-//restaurant courbe
-//restaurant courbe
+//Rapport economique de chaque restaurant 
+
 const restoCanvas = document.getElementById('resto-courbe');
 if (!restoCanvas) {
     console.error("Canvas avec l'id 'resto-courbe' introuvable. Aucune courbe restaurant affichée.");

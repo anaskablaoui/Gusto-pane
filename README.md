@@ -1,4 +1,4 @@
-# Nom du Projet (ex: MyManager - Gestion Hospitalière)
+# Nom du Projet (Gusto & pane Management )
 
 <!-- Mettez un court slogan ou une description en une phrase ici -->
 > Application Backoffice de gestion réalisée dans le cadre du module Dévelopement web.
@@ -17,16 +17,17 @@
 
 | Prénom & Nom | Rôle / Tâches principales | Lien Github |
 |--------------|---------------------------|-------------|
-| Étudiant 1   | (ex: Dashboard, ChartJS)  | [@pseudo](https://github.com/pseudo) |
-| Étudiant 2   | (ex: CRUD Utilisateurs)   | [@pseudo](https://github.com/pseudo) |
-| Étudiant 3   | (ex: CSS, Responsive)     | [@pseudo](https://github.com/pseudo) |
+| Anas Kablaoui| CRUD, DASHBOARD, HTML       | [@pseudo](https://github.com/pseudo) |
+| Badr Benhilal| css Responsive, CRUD      | [@pseudo](https://github.com/pseudo) |
+
 
 ---
 
 ## 📝 Thème Choisi
 <!-- Indiquez le thème choisi parmi la liste ou votre sujet personnalisé -->
-*   **Thème :** (ex: Gestion de Bibliothèque / Gestion Immobilière / Custom...)
-*   **Description :** Une brève explication du but de l'application.
+*   **Thème :** Gestion d'un restaurant italien (Gusto & pane)
+*   **Description :** Gusto & pane Management ,une application web qui gere un restaurant Italien Apele Gusto & pane ,
+                    cette gestion consiste a avoire des information sur nos restaurants sou forme de graph et des tableau et aussi la gestion Crud .
 
 ---
 
@@ -34,26 +35,26 @@
 <!-- Cochez les cases [x] pour les fonctionnalités terminées. Laissez [ ] pour ce qui n'est pas fait. -->
 
 ### Fonctionnalités Principales
-- [X] **CRUD 1 :** [Nom Entité, ex: Utilisateurs] (Create, Read, Update, Delete)
-- [ ] **CRUD 2 :** [Nom Entité]
-- [ ] **CRUD 3 :** [Nom Entité]
-- [ ] **CRUD 4 :** [Nom Entité]
-- [ ] **CRUD 5 :** [Nom Entité]
-- [ ] **Recherche & Filtres** dans les tableaux
-- [ ] **Pagination**
+- [X] **CRUD 1 :** [Stocks] (Create, Read, Update, Delete)
+- [x] **CRUD 2 :** [Restaurants]
+- [x] **CRUD 3 :** [Menu]
+- [x] **CRUD 4 :** [Reservation]
+- [x] **CRUD 5 :** [Employes]
+- [x] **Recherche & Filtres** dans les tableaux
+- [x] **Pagination**
 
 ### Dashboard & Data
-- [ ] **KPIs :** Cartes avec chiffres clés (Total utilisateurs, revenus, etc.)
-- [ ] **Chart 1 :** [Type, ex: Pie Chart]
-- [ ] **Chart 2 :** [Type, ex: Bar Chart]
-- [ ] **Chart 3 :** [Type]
-- [ ] **Chart 4 :** [Type]
-- [ ] **Chart 5 :** [Type]
+- [x] **KPIs :** Cartes avec chiffres clés (Total utilisateurs, revenus, etc.)
+- [x] **Chart 1 :** [Type line chart
+- [x] **Chart 2 :** [Type Doughnut Chart]
+- [x] **Chart 3 :** [Bar Charts]
+- [x] **Chart 4 :** [Bar Charts]
+- [x] **Chart 5 :** [Bar Charts]
 
 ### Technique & Bonus
 - [ ] **Export :** (PDF ou CSV)
-- [ ] **Architecture :** Code organisé sans Framework (Vanilla JS)
-- [ ] **Design :** Interface Responsive (Mobile/Tablette)
+- [X] **Architecture :** Code organisé sans Framework (Vanilla JS)
+- [X] **Design :** Interface Responsive (Mobile/Tablette)
 
 ---
 

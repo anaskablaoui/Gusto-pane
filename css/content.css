@@ -691,6 +691,52 @@ form label {
 /*CSS partie EMPLOYEE*/
 
 
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+#search-input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+  max-width: 300px;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pagination-controls button {
+  padding: 6px 12px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 4px;
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#page-info {
+  font-weight: bold;
+  min-width: 100px;
+  text-align: center;
+}
+
+#items-per-page {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 .employee-content {
     display: flex;
     gap: 20px;
