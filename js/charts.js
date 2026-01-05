@@ -6,7 +6,7 @@ let categoryInfo=[];
 let mois=['Jan' , 'Fev', 'Mar', 'Avr', 'Mai', 'juin' ,'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 //chart lineaire de l'economie (rapport recette - depenmse )
-fetch('../data/economie_mounthly.json')
+fetch('./data/economie_mounthly.json')
     .then(response => response.json())
     .then(data => {
         economie = data["2025"].map(item => item.totale);

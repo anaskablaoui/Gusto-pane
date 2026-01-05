@@ -16,7 +16,7 @@ let currentPageReserv = 1;
 let itemsPerPageReserv = 10;
 
 // Charger les données
-fetch('../data/reservation.json')
+fetch('./data/reservation.json')
   .then(res => res.json())
   .then(data => {
     console.log('Données chargées:', data);  
