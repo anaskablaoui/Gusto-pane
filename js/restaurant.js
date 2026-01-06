@@ -20,7 +20,7 @@ let currentPageRestaurant = 1;
 let itemsPerPageRestaurant = 10;
 
 // Charger les données
-fetch('data/restaurant.json')
+fetch('./data/restaurant.json')
   .then(res => res.json())
   .then(data => {
     restaurants = data.restaurants || [];
