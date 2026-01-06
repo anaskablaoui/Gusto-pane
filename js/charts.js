@@ -6,7 +6,7 @@ let categoryInfo=[];
 let mois=['Jan' , 'Fev', 'Mar', 'Avr', 'Mai', 'juin' ,'Juil', 'Aout', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 //chart lineaire de l'economie (rapport recette - depenmse )
-fetch('./data/economie_mounthly.json')
+fetch('../data/economie_mounthly.json')
     .then(response => response.json())
     .then(data => {
         economie = data["2025"].map(item => item.totale);
@@ -47,7 +47,7 @@ let ecoChart =new Chart(ctx ,{
 
 // chart doughnut sur le nombre d'achat par categories
 let favctx = document.getElementById('favDonnut').getContext('2d');
-fetch('./data/repartition_ventes.json')
+fetch('../data/repartition_ventes.json')
     .then(response => response.json())
     .then(data => {
         category = data.map(item => item.categorie);
@@ -85,7 +85,7 @@ fetch('./data/repartition_ventes.json')
 let recette = document.getElementById('recette').getContext('2d');
 
 //chart bar de recette des anne 2024 2025 2026 
-fetch('./data/recette_monthly.json')
+fetch('../data/recette_monthly.json')
     .then(response => response.json())
     .then(data =>
     {
@@ -145,7 +145,7 @@ let recetteCharts =new Chart( recette,{
 
 //chart bar de depense des anne 2024 2025 2026 
 const depense = document.getElementById('depense').getContext('2d');
-fetch('./data/depense_monthly.json')
+fetch('../data/depense_monthly.json')
     .then(response => response.json())
     .then(data =>
         {
@@ -211,7 +211,7 @@ if (!restoCanvas) {
 } else {
     const restaurants = restoCanvas.getContext('2d');
 
-    fetch('./data/restaurant_commerce.json')
+    fetch('../data/restaurant_commerce.json')
         .then(response => response.json())
         .then(data => {
             const Rlabels = data.map(item => item.nom || '');

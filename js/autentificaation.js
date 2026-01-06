@@ -1,6 +1,6 @@
 let admins = [];
 
-fetch('./data/admin.json')
+fetch('../data/admin.json')
     .then(response => response.json())
     .then(data => {
         admins = data; // selon la structure du JSON
