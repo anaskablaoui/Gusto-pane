@@ -1,4 +1,5 @@
 const reservTable = document.querySelector('#reservationTable');
+if(!reservTable) return;
 const reservForm = document.getElementById('reserv-form');
 const searchReservInput = document.getElementById('search-reservation');
 const prevBtnReserv = document.getElementById('prev-page-reserv');

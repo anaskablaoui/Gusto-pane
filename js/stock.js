@@ -1,4 +1,5 @@
 const stockTable = document.querySelector('#stock-table tbody');
+if(!stockTable) return ;
 const stockForm = document.getElementById('stock-form');
 const searchStockInput = document.getElementById('search-stock');
 const prevBtnStock = document.getElementById('prev-page-stock');
