@@ -16,7 +16,7 @@ let currentPageMenu = 1;
 let itemsPerPageMenu = 10;
 
 // Charger les données de fichier json 
-fetch('../data/menu.json')
+fetch('data/menu.json')
   .then(res => res.json())
   .then(data => {
     menu = data.menu || [];

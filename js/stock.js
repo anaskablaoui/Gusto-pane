@@ -16,7 +16,7 @@ let currentPageStock = 1;
 let itemsPerPageStock = 10;
 
 // Charger les données
-fetch('../data/stock.json')
+fetch('./data/stock.json')
   .then(response => response.json())
   .then(data => {
     stock = data.stock || [];
