@@ -1,5 +1,5 @@
 const tableBody = document.querySelector('.table-restaut table tbody');
-if (!tableBody) return;
+
 const formRestaurant = document.getElementById('form-restaut');
 const searchRestaurantInput = document.getElementById('search-restaurant');
 const prevBtnRestaurant = document.getElementById('prev-page-restaurant');
