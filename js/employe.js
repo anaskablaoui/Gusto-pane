@@ -16,7 +16,7 @@ let currentPage = 1;
 let itemsPerPage = 10;
 
 // Charger les données
-fetch('../data/employe.json')
+fetch('./data/employe.json')
   .then(res => res.json())
   .then(data => {
     employes = data.employes || [];
